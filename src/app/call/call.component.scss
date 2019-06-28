@@ -1,0 +1,21 @@
+
+:host {
+    display: flex;
+}
+:host > div {
+    flex: 1;
+}
+#callScreen {
+    height: 500px;
+}
+ul {
+    list-style-type: none;
+    span {
+        margin: 0 15px;
+        text-decoration: underline;
+    }
+    span:hover {
+        text-decoration: none;
+        cursor: pointer;
+    }
+}

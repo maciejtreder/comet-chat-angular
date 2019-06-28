@@ -1,1 +1,11 @@
-<p>call works!</p>
+
+<div>
+    <ul class="contacts">
+        <li *ngFor="let contact of (contacts | async)">
+            {{contact.name}} ({{contact.status}}) <span *ngIf="contact.status=='online'" (click)="voiceCall(contact.uid)">voice call</span> <span *ngIf="contact.status=='online'"  (click)="videoCall(contact.uid)">vidoe call</span>
+        </li>
+    </ul>
+</div>
+<div>
+    <app-outgoing-call *ngIf = "outgoingCall$ | async as outgoingCall" [call]="outgoingCall"></app-outgoing-call>
+</div>

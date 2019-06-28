@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component } from '@angular/core';
+import { CometChatService } from '../comet-chat.service';
+import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-call',
-  templateUrl: './call.component.html',
-  styleUrls: ['./call.component.scss']
+ selector: 'app-call',
+ templateUrl: './call.component.html',
+ styleUrls: ['./call.component.scss']
 })
-export class CallComponent implements OnInit {
+export class CallComponent {
+ 
+  public contacts: Observable<any[]> = this.chat.getUsers();
+ public outgoingCall$: Observable<any> = this.chat.getOutgoingCalls();
+ 
+ constructor(private chat: CometChatService) { }
 
-  constructor() { }
-
-  ngOnInit() {
+  public voiceCall(userId: string):void {
+    this.chat.startVoiceCall(userId).subscribe();
   }
 
+  public videoCall(userId: string):void {
+    this.chat.startVideoCall(userId).subscribe();
+  }
 }
