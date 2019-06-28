@@ -1,0 +1,27 @@
+
+.positive {
+    color: green;
+}
+.negative {
+    color: red;
+}
+img {
+    max-width: 200px;
+    max-height: 200px;
+}
+:host {
+    display: flex;
+    flex-direction: column;
+}
+:host > * {
+    display: flex;
+    justify-content: center;
+}
+span {
+    margin: 0 15px;
+    text-decoration: underline;
+}
+span:hover {
+    text-decoration: none;
+    cursor: pointer;
+}

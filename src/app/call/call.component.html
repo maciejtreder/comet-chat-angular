@@ -8,4 +8,7 @@
 </div>
 <div>
     <app-outgoing-call *ngIf = "outgoingCall$ | async as outgoingCall" [call]="outgoingCall"></app-outgoing-call>
+    <app-incoming-call *ngIf = "incomingCall$ | async as incomingCall" [call]="incomingCall"></app-incoming-call>
+    <app-ongoing-call *ngIf = "ongoingCall$ | async as ongoingCall" [call]="ongoingCall"></app-ongoing-call>
+    <div id="callScreen"></div>
 </div>

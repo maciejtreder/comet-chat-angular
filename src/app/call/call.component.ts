@@ -11,6 +11,8 @@ import { Observable } from 'rxjs';
 export class CallComponent {
  
   public contacts: Observable<any[]> = this.chat.getUsers();
+  public incomingCall$: Observable<any> = this.chat.getIncomingCalls();
+  public ongoingCalls$: Observable<any> = this.chat.getOngoingCalls();
  public outgoingCall$: Observable<any> = this.chat.getOutgoingCalls();
  
  constructor(private chat: CometChatService) { }

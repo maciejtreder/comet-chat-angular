@@ -1,0 +1,6 @@
+
+<h1>Call from {{call.callInitiator.name}}</h1>
+<div><img [src]="call.callInitiator.avatar" /></div>
+<div>
+    <span class="positive" (click)="accept()">Accept</span><span class="negative" (click)="reject()">Reject</span>
+</div>
